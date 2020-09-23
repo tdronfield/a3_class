@@ -1,0 +1,20 @@
+body {
+  color: salmon;
+}
+
+nav {
+  color: white;
+}
+nav li {
+  display: inline-block;
+}
+nav li a {
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=master.css.map */

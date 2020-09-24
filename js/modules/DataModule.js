@@ -1,5 +1,5 @@
 module.exports = {
-    name: "TVR",
+    name: "Trevor",
     nickname: "TERVOR",
-    role: "very frustrated professor cuz Bongo let me down",
+    role: "very frustrated professor cuz Bongo let me down"
 }

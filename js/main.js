@@ -1,9 +1,7 @@
-// import js files
+// import your packages here
 import Person from "./modules/DataModule.js";
-import NavSystem from "./modules/theNavModule.js";
+import NavSystem from "./modules/TheNavSystem.js";
 
-
-// A self envoking function
 (() => {
     // stub * just a place for non-component-specific stuff
     console.log('loaded');

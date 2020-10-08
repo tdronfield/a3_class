@@ -16,28 +16,41 @@
 
         <!-- this is an HTML component -->
         <nav class="main-nav">
-            <li>
-                <a href="#" class="nav-item">item 1</a>
-            </li>
-
-            <li><a href="#" class="nav-item">item 2</a></li>
-            <li><a href="#" class="nav-item">item 3</a></li>
-            <li><a href="#" class="nav-item">item 4</a></li>
-            <li><a href="#" class="nav-item">item 5</a></li>
+            <li class="nav-item"><a href="#">item 1</a></li>
+            <li class="nav-item"><a href="#">item 2</a></li>
+            <li class="nav-item"><a href="#">item 3</a></li>
+            <li class="nav-item"><a href="#">item 4</a></li>
+            <li class="nav-item"><a href="#">item 5</a></li>
         </nav>
         <!-- end component -->
 
         <!-- add users section here -->
         <section class="users-section">
-            <h1 class="hidden">Our Users</h1>
+            <!-- This gets commented out because we are using it in a template now -->
+            <!-- <h1 class="hidden">Our Users</h1>
             <h2 class="user-name"></h2>
             <p class="user-role"></p>
-            <p class="user-nickname"></p>
+            <p class="user-nickname"></p> -->
         </section>
         <!-- end users section -->
     </main>
 
     <footer>this is a simple footer</footer>
+
+    <!-- Templates go here -->
+    <!-- In Vue, These are built in to the framework -->
+    <!-- These do not get rendered on the page, they are a point of reference -->
+    
+    <template id="profs-template">
+        <div class="user">
+            <h1 class="hidden"></h1>
+            <h2 class="user-name"></h2>
+            <p class="user-role"></p>
+            <p class="user-nickname"></p>
+        </div>
+    </template>
+    
+    <!-- end templates -->
 
     <!-- script files always go here -->
     <script type="module" src="js/main.js"></script>

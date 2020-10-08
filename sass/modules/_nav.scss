@@ -8,9 +8,9 @@ nav {
 
         //to include a mixin
         @include roundCorners(8px);
-        @include addPadding(0 5px 8px 0);
+        @include addPadding(5px 5px);
 
-        a { cursor: pointer; text-decoration: none; }
+        a { cursor: pointer; text-decoration: none; color: white;}
     }
 
     :hover {

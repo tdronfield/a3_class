@@ -1,27 +1,38 @@
 // import your packages here
-import Team from "./modules/DataModule.js";
-import NavSystem from "./modules/TheNavSystem.js";
+// when using AJAX, we do not need to import files
+// import Team from "./modules/DataModule.js";
+// import NavSystem from "./modules/TheNavSystem.js";
 
 (() => {
     // stub * just a place for non-component-specific stuff
     
     // AJAX REQUESTS STARTS HERE
 
-    // Set up XMLhttp object
+    // Set up XMLhttp (AJAX) object
     let myReq = new XMLHttpRequest;
 
     // Make sure we are handling data that comes back or errors
-    myReq.addEventListener("readystatechange", handleRequest);
+    myReq.addEventListener('readystatechange', handleRequest);
 
     // open a request and pass through the URL or path of data we want
+    // ready state 1
     myReq.open('GET', '../DataSet.json');
+
+    // send the request to execute
+    // ready state 2
     myReq.send(); // makes the actual request
 
+
+    // this is a passive listener function - it gets invoked for every stage of the AJAX request. When the request is done and the data payload is returned from the server it passes that data to the handleDataSet function
+
     function handleRequest() {
+        debugger;
+
         if (myReq.readyState === XMLHttpRequest.DONE) {
+            debugger;
             // check status here and proceed
             if (myReq.status === 200) {
-                // 200 means done and dusted, ready to go with the dataset!
+                // 200 means everything is ready!
                 debugger;
                 handleDataSet(myReq.responseText);
 
@@ -31,6 +42,7 @@ import NavSystem from "./modules/TheNavSystem.js";
                 console.error(`${myReq.status} : something done broke, son`);
             }
         } else {
+            debugger;
             // request isn't ready yet, keep waiting...
             console.log(`Request state: ${myReq.readyState}. Still processing...`);
         }
@@ -39,9 +51,7 @@ import NavSystem from "./modules/TheNavSystem.js";
 
 // AJAX REQUESTS END HERE
 
-    let userSection = document.querySelector(".users-section"),
-    // Cannot reference template itself, need to select the content inside specifically
-        userTemplate = document.querySelector("#profs-template").content;
+    
     
     // console.log('loaded');
     // console.log(Team);
@@ -61,6 +71,11 @@ import NavSystem from "./modules/TheNavSystem.js";
 
     //select our user elements and load the content
     function handleDataSet(data) {
+        let myData = JSON.parse(data),
+            userSection = document.querySelector(".users-section"),
+            // Cannot reference template itself, need to select the content inside specifically
+            userTemplate = document.querySelector("#profs-template").content;
+
         debugger;
 
         for (let user in data) {

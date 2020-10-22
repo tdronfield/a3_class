@@ -56,12 +56,12 @@
     // console.log('loaded');
     // console.log(Team);
 
-    debugger;
+    //debugger;
 
-    fetch(url)
-        .then(response => response.jason())
-        .then( data => console.log(data))
-        .catch((err) => console.error(err));
+    // fetch(url)
+    //     .then(response => response.jason())
+    //     .then( data => console.log(data))
+    //     .catch((err) => console.error(err));
 
     
     // This is static for now

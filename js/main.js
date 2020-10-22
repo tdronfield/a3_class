@@ -2,24 +2,10 @@
 // when using AJAX, we do not need to import files
 // import Team from "./modules/DataModule.js";
 // import NavSystem from "./modules/TheNavSystem.js";
+import {fetchData} from "./modules/DataMiner.js";
 
 (() => {
-    // stub * just a place for non-component-specific stuff
-    
-    // AJAX REQUESTS STARTS HERE
-
-    fetch('./DataSet.json')
-        .then(res => res.json()) // built in method to parse data into plain JS
-        .then(data => {
-            // this is our data (DataSet.json)
-            //convert to plain JS object
-            handleDataSet(data);
-        })
-
-        .catch((error) => console.log(error));
-    
-
-    //select our user elements and load the content
+    // this receives the data payload from our AJAX req, parses it
     function handleDataSet(data) {
         let userSection = document.querySelector(".users-section"),
             // Cannot reference template itself, need to select the content inside specifically
@@ -45,7 +31,9 @@
             userSection.appendChild(currentUser);
         }
     }
-    // This gets removed when we start to use AJAX
-    // handleDataSet(Team);
+
+    // pass in data that will be run through fetchData function in DataMiner.js
+    fetchData('./DataSet.json').then(data => handleDataSet(data)).catch(err => console.log(err));
+    
 
 })();

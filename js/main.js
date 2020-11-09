@@ -10,7 +10,7 @@ import {fetchData} from "./modules/DataMiner.js";
         // populate a lightbox with this data
         // then open it
         let lightbox = document.querySelector(."lightbox");
-        
+
     }
 
     function retrieveProjectInfo() {

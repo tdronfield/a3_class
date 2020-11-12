@@ -9,11 +9,11 @@ import {fetchData} from "./modules/DataMiner.js";
     function handleDataSet(data) {
         // populate a lightbox with this data
         // then open it
-        let lightbox = document.querySelector(."lightbox");
+        let lightbox = document.querySelector(".lightbox");
 
     }
 
-    function retrieveProjectInfo() {
+    function retrieveProjectInfo(event) {
         // console.log(event.target.id);
         // debugger;
 
